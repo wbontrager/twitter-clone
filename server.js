@@ -39,6 +39,8 @@ connection.connect(function(error) {
     console.log('connected to database');
 });
 
+router(app, connection);
+
 http.createServer(app).listen(app.get('port'), function() {
     console.log('express server listening on port ' + app.get('port'));
 });
