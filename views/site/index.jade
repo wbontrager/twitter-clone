@@ -1,7 +1,29 @@
 extends layout
 
 block content
-  .row
-    .col-md-7
-      p Welcome to Twitter Clone
-    .col-md-5.well
+    .row
+        .col-md-7
+            p Welcome to Twitter Clone
+        .col-md-5.well
+            p(style='color: red;')=message
+
+            form(action='/register', method='post').form-horizontal
+                .form-group
+                    label.col-sm-4 Email
+                    .col-sm-7
+                        input(type='email', name='email', placeholder='Enter Email').form-control
+                .form-group
+                    label.col-sm-4 Full Name
+                    .col-sm-7
+                        input(type='text', name='name', placeholder='Enter Name').form-control
+                .form-group
+                    label.col-sm-4 Password
+                    .col-sm-7
+                        input(type='password', name='password', placeholder='Password').form-control
+                .form-group
+                    label.col-sm-4 Repeat Password
+                    .col-sm-7
+                        input(type='password', name='password_w', placeholder='Repeat Password').form-control
+                .form-group
+                    .col-sm-offset-4.col-sm-10
+                        button(type='submit').btn.btn-default Sign up

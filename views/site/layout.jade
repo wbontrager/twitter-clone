@@ -1,26 +1,26 @@
 doctype html
 html(lang='en')
-  head
-    title Twitter Clone
+    head
+        title Twitter Clone
 
-    link(rel='stylesheet', href='/css/bootstrap.css')
-    link(rel='stylesheet', href='/css/style.css')
-  body
-    .navbar.navbar-inverse.navbar-fixed-top
-      .container
-        .navbar-header
-          a(href='#').navbar-brand Twitter Clone
-        .navbar-collapse.collapse
-          form.navbar-form.navbar-right
-            .form-group
-              input(type='text', placeholder='Email', name='email').form-control
-            div(style='margin-left: 5px;').form-group
-              input(type='password', placeholder='Password', name='password').form-control
-            button(type='submit', style='margin-left: 5px;').btn.btn-success Sign in
-    .container.content
-      block content
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/style.css')
+    body
+        .navbar.navbar-inverse.navbar-fixed-top
+            .container
+                .navbar-header
+                    a(href='#').navbar-brand Twitter Clone
+                .navbar-collapse.collapse
+                    form(action='/login', method='post').navbar-form.navbar-right
+                        .form-group
+                            input(type='text', placeholder='Email', name='email').form-control
+                        div(style='margin-left: 5px;').form-group
+                            input(type='password', placeholder='Password', name='password').form-control
+                        button(type='submit', style='margin-left: 5px;').btn.btn-success Sign in
+        .container.content
+            block content
 
-    .container
-      hr
-      footer
-      p Twitter Clone 2014
+        .container
+            hr
+            footer
+                p Twitter Clone 2014

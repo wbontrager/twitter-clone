@@ -1,0 +1,28 @@
+doctype html
+html(land='en')
+	head
+		title Twitter Clone
+
+		link(rel='stylesheet', href='/css/bootstrap.css')
+		link(rel='stylesheet', href='/css/style.css')
+	body
+		.navbar.navbar-inverse.navbar-fixed-top
+			.container
+				.navbar-header
+					a(href='/home').navbar-brand Twitter Clone
+				.navbar-collapse.collapse
+					ul.nav.navbar-nav.navbar-right
+						li
+							a(href='/logout') Logout
+
+		.jumbotron
+			.container
+				block header
+
+		.container
+			block content
+
+		.container
+			hr
+			footer
+				p Twitter Clone 2014

@@ -12,6 +12,8 @@ app.configure(function() {
     app.set('view engine', 'jade');
 
     app.use(express.bodyParser());
+    app.use(express.cookieParser('cookieSecret'));
+    app.use(express.session({secret: 'sessionSecret' }));
     app.use(app.router);
     app.use(express.static(__dirname + '/public'));
 });
