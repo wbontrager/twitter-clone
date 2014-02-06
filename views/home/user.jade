@@ -1,7 +1,12 @@
 extends layout
 
 block header
-	h3=user.username
+	h3=user_open.username
+	- if (user_open.id != user.id)
+		- if (follow)
+			a(href='/unfollow/#{user_open.id}').btn.btn-danger Unfollow
+		- else
+			a(href='/follow/#{user_open.id}').btn.btn-success Follow
 
 block content
 	.col-md-6
@@ -10,5 +15,5 @@ block content
 			.col-md-2
 			.col-md-10
 				b
-					a(href='/user/#{user.id}') #{user.username}
+					a(href='/user/#{user.id}') #{user_open.username}
 				p #{post.tweet}

@@ -21,4 +21,7 @@ module.exports = function (app, database) {
 
     app.post('/tweet', tweet.post_tweet(database));
     app.get('/user/:user', user.get_user(database));
+
+    app.get('/follow/:id', user.get_follow(database));
+    app.get('/unfollow/:id', user.get_unfollow(database));
 }
