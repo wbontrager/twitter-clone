@@ -3,10 +3,18 @@ extends layout
 block header
 	.col-md-6
 	.col-md-6
-		form
-			textarea(rows='3', name='tweet').form-control
+		p(style='color:red;')=message
+
+		form(action='/tweet', method='post')
+			textarea(rows='3', name='text').form-control
 			button(type='submit', style='float: right; margin-top: 10px;').btn.btn-primary Post
 
 block content
 	.col-md-6
 	.col-md-6
+		- each post in posts
+			.col-md-2
+			.col-md-10
+				b
+					a(href='/user/#{post.user_id}') #{post.username}
+				p #{post.tweet}
