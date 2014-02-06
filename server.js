@@ -16,6 +16,7 @@ app.configure(function() {
     app.use(express.session({secret: 'sessionSecret' }));
     app.use(app.router);
     app.use(express.static(__dirname + '/public'));
+    app.use(express.static(__dirname + '/uploads'));
 });
 
 app.use('development', function() {

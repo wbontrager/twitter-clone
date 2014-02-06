@@ -12,8 +12,15 @@ block content
 	.col-md-6
 	.col-md-6
 		- each post in posts
-			.col-md-2
-			.col-md-10
-				b
-					a(href='/user/#{user.id}') #{user_open.username}
-				p #{post.tweet}
+			.clearfix
+				.col-md-2
+					- if (post.image)
+						img(src='/#{post.image}', alt='#{post.username}', height='50', width='50').img-thumbnail
+					- else 
+						img(src='/default.png', alt='#{post.username}', height='50', width='50').img-thumbnail
+				.col-md-10
+					b
+						a(href='/user/#{post.id}') #{post.username}
+					p #{post.tweet}
+					
+			hr

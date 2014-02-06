@@ -11,10 +11,39 @@ block header
 
 block content
 	.col-md-6
+		.well
+			.clearfix
+				.col-md-3
+					- if (user.image)
+						img(src='/#{user.image}', alt='#{user.username}', height='150', width='150').img-thumbnail
+					- else 
+						img(src='/default.png', alt='#{user.username}', height='150', width='150').img-thumbnail
+				.col-md-9
+					h3 #{user.username}
+
+			hr
+
+			table.table.table-bordered
+				thead
+					tr
+						th #{tweets}
+						th #{follows}
+						th #{follower}
+				tbody
+					tr
+						td Tweets
+						td Follows
+						td Follower
 	.col-md-6
 		- each post in posts
-			.col-md-2
-			.col-md-10
-				b
-					a(href='/user/#{post.id}') #{post.username}
-				p #{post.tweet}
+			.clearfix
+				.col-md-2
+					- if (post.image)
+						img(src='/#{post.image}', alt='#{post.username}', height='150', width='150').img-thumbnail
+					- else 
+						img(src='/default.png', alt='#{post.username}', height='150', width='150').img-thumbnail
+				.col-md-10
+					b
+						a(href='/user/#{post.id}') #{post.username}
+					p #{post.tweet}
+			hr
